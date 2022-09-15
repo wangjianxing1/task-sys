@@ -1,8 +1,13 @@
+# 发送短信配置文件
+
 """
 第三方配置
 """
-# 互亿无限短信配置 根据世纪进行修改
-from local_settings import HYWX_ACCOUNT, HYWX_PASSWORD
+# 互亿无限短信配置 根据实际进行修改
+# 短信配置
+# 互亿无限短信配置
+HYWX_ACCOUNT = 'C468545028'
+HYWX_PASSWORD = '60c5157972c733cae505ff4e71f6922e'
 
 HY_SMS_URL = 'http://106.ihuyi.com/webservice/sms.php?method=Submit'
 HY_SMS_PARAMS = {
