@@ -20,7 +20,7 @@ from user import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/get_sms_vcode', api.send_sms_vcode),
+    path('user/get_sms_vcode/', api.send_sms_vcode),
     path('user/register/', api.register),
 
 ]
