@@ -6,7 +6,7 @@ import requests
 
 import json
 
-from django.core.cache import cache
+from django.core.cache import caches
 
 from my_celery.main import app
 # from my_celery.sms import config
@@ -21,7 +21,7 @@ def gen_verify_code(length=6):
 def send_verify_code(phonenum):
     vcode = gen_verify_code()
     key = 'VerifyCode-%s' % phonenum
-    cache.set(key, vcode, 120)  # 120秒后过期
+    caches['verify'].set(key, vcode, 120)  # 120秒后过期
     sms_cfg = config.HY_SMS_PARAMS.copy()
     sms_cfg['content'] = sms_cfg['content'] % vcode
     sms_cfg['mobile'] = phonenum
