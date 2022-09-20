@@ -11,7 +11,6 @@ from celery import Celery
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'task_sys.settings')
 django.setup()
-django.setup()
 
 
 

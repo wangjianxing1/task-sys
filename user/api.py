@@ -62,4 +62,5 @@ class RegisterModelForm(forms.ModelForm):
 
 def register(request):
     form = RegisterModelForm()
-    return render(request, 'register.html', {'form': form})
+    # return render(request, 'register-test.html', {'form': form})
+    return render(request, 'user/register-test.html', {'form': form})

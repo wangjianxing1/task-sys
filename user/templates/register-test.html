@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.4.1/dist/css/bootstrap.css">
+    <script src="/static/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/register.js"></script>
+    <style>
+        .account{
+            width:400px;
+            margin:0 auto;
+        }
+        h1{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div class="account">
+   <h1>注册</h1>
+   <form>
+<!--       {% csrf_token %}-->
+
+        {% for field in form %}
+            {% if field.name == 'code' %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                     <div class="clearfix">
+                         <div class="col-md-6" style="padding-left:0">{{ field }}</div>
+                         <div class="col-md-6"><input id="get_vcode" class="btn btn-default" type="button" value="点击获取验证码"></div>
+                     </div>
+                </div>
+            {% else %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                     {{ field }}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">注册</button>
+    </form>
+
+
+</div>
+</body>
+</html>
